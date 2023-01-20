@@ -18,7 +18,7 @@ export function Home() {
       <View className="flex-row mt-6 mb-2">
         {
           weekDays.map((weekDay, i) => (
-            <Text 
+            <Text
               key={`${weekDay}-${i}`}
               className="text-zinc-400 text-xl font-bold text-center mx-1"
               style={{ width: DAY_SIZE }}
@@ -44,7 +44,7 @@ export function Home() {
             amountOfDaysToFill > 0 && Array
             .from({ length: amountOfDaysToFill })
             .map((_, index) => (
-              <View 
+              <View
                 key={index}
                 className="bg-zinc-900 rounded-lg border-2 m-1 border-zinc-800 opacity-40"
                 style={{ width: DAY_SIZE, height: DAY_SIZE }}
@@ -56,4 +56,4 @@ export function Home() {
 
     </View>
   )
-} 
+}
