@@ -15,7 +15,8 @@
 
 ## Sobre a aplicação
 Aplicação desenvolvida durante o NLW Setup, promovido pela Rocketseat.<br />
-Durante o evento, foram desenvolvidas 3 aplicações, uma API em Node, uma aplicação React com Vite e um App em React Native. Infelizmente, não tive tempo de terminar a aplicação mobile. Mas a API e a aplicação Web estão completas.<br />
+Durante o evento, foram desenvolvidas 3 aplicações, uma API em Node, uma aplicação React com Vite e um App em React Native. <br />
+Infelizmente, não tive tempo de terminar a aplicação mobile, mas a API e a aplicação Web estão completas.<br />
 A aplicação web permite cadastrar tarefas diárias. Conforme vou concluindo as tarefas, a cor do dia fica mais clara.<br />
 <br />
 
