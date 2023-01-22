@@ -1,5 +1,6 @@
 import { Plus } from 'phosphor-react';
 
+import './lib/dayjs';
 import logoImage from './assets/logo.svg';
 import { Header } from './components/Header';
 import { SummaryTable } from './components/SummaryTable';

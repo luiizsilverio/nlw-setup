@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import dayjs from "dayjs";
+
 import api from "../lib/axios";
 import { generateDays } from "../utils/generate-days";
 import { HabitDay } from "./HabitDay";
@@ -10,8 +12,8 @@ const amountOfDaysToFill = minDays - summaryDates.length;
 type ISummary = {
   id: string;
   date: string;
-  amount: string;
-  completed: string;
+  amount: number;
+  completed: number;
 }
 
 export function SummaryTable() {
@@ -38,11 +40,16 @@ export function SummaryTable() {
       <div className="grid grid-rows-7 grid-flow-col gap-3">
         {
           summaryDates.map(date => {
+            const dayInSummary = summary.find(day => {
+              return dayjs(date).isSame(day.date, 'day');
+            })
+
             return (
               <HabitDay
                 key={date.toString()}
-                amount={5}
-                completed={Math.round(Math.random() * 5)}
+                date={date}
+                amount={dayInSummary?.amount}
+                completed={dayInSummary?.completed}
               />
             )
           })
