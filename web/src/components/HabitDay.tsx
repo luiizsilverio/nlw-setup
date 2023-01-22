@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
@@ -7,23 +8,24 @@ import { HabitsList } from './HabitsList';
 
 interface Props {
   date: Date;
-  completed?: number;
+  defaultCompleted?: number;
   amount?: number;
 }
 
-export function HabitDay({ date, completed = 0, amount = 0 }: Props) {
+export function HabitDay({ date, defaultCompleted = 0, amount = 0 }: Props) {
+  const [completed, setCompleted] = useState(defaultCompleted);
   const completedPercentage = amount > 0 ? Math.round((completed / amount) * 100) : 0;
   const diaMes = dayjs(date).format('DD/MM');
   const dayOfWeek = dayjs(date).format('dddd');
 
   function handleCompletedChanged(completed: number) {
-
+    setCompleted(completed);
   }
 
   return (
     <Popover.Root>
       <Popover.Trigger
-        className={clsx("w-10 h-10 border-2 rounded-lg", {
+        className={clsx("w-10 h-10 border-2 rounded-lg transition-colors", {
           'bg-zinc-900 border-zinc-800': completedPercentage === 0,
           'bg-violet-900 border-violet-700': completedPercentage > 0 && completedPercentage < 20,
           'bg-violet-800 border-violet-600': completedPercentage >= 20 && completedPercentage < 40,

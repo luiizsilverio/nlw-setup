@@ -63,11 +63,11 @@ export function HabitsList({ date, onCompletedChanged } : Props) {
             disabled={pastDay}
             checked={habitsInfo.completedHabits.includes(habit.id)}
             onCheckedChange={() => handleToggleHabit(habit.id)}
-            className='flex items-center gap-3 group'
+            className='flex items-center gap-3 group disabled:cursor-not-allowed'
           >
             <div className={`
               h-8 w-8 rounded-lg flex items-center justify-center
-              bg-zinc-900 border-2 border-zinc-800
+              bg-zinc-900 border-2 border-zinc-800 transition-colors
               group-data-[state=checked]:bg-green-500
               group-data-[state=checked]:border-green-500
             `}>
